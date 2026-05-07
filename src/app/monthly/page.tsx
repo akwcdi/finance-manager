@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
-import { Download } from 'lucide-react'
+import { Download, ArrowLeft } from 'lucide-react'
 import { genres } from '@/client/components/genre'
 
 interface MonthlyData {
@@ -151,7 +152,12 @@ export default function MonthlyPage() {
     <div className="min-h-screen w-full flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-4xl">
         <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-2xl font-bold">月別支出グラフ</CardTitle>
+          <div className="flex items-center space-x-3">
+            <Button variant="outline" size="icon" asChild>
+              <Link href="/"><ArrowLeft className="h-4 w-4" /></Link>
+            </Button>
+            <CardTitle className="text-2xl font-bold">月別支出グラフ</CardTitle>
+          </div>
           <div className="flex space-x-2">
             <Select value={selectedYear} onValueChange={setSelectedYear}>
               <SelectTrigger className="w-[120px]">
