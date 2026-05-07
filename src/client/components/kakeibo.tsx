@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, useMemo } from 'react'
-import { Plus, Pencil, Trash2, Download } from 'lucide-react'
+import { Plus, Pencil, Trash2, Download, ArrowLeft } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -297,7 +297,12 @@ export default function Kakeibo() {
         <div className="min-h-screen w-full flex items-center justify-center bg-background p-4">
           <Card className="w-full max-w-4xl">
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle className="text-2xl font-bold">家計簿アプリ</CardTitle>
+              <div className="flex items-center space-x-3">
+                <Button variant="outline" size="icon" asChild>
+                  <Link href="/"><ArrowLeft className="h-4 w-4" /></Link>
+                </Button>
+                <CardTitle className="text-2xl font-bold">登録</CardTitle>
+              </div>
               <div className="flex space-x-2">
                 <Button asChild>
                   <Link href="/monthly">月次分析</Link>
