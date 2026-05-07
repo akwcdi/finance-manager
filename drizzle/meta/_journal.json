@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1778111653577,
+      "tag": "0000_early_madelyne_pryor",
+      "breakpoints": true
+    }
+  ]
+}

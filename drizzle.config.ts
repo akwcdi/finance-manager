@@ -4,7 +4,8 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 export default defineConfig({
-  schema: "./src/server/infrastructure/db/schema.ts",
+  schema: "./src/server/infrastructure/db/schema",
+  out: "./drizzle",
   dialect: "mysql",
   dbCredentials: {
     host: process.env.DB_HOST!,
